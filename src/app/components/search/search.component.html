@@ -1,0 +1,12 @@
+<h1>Search: <small>{{ter}}</small> </h1>
+<hr>
+<div class="row" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No se encontraron resultados con el termino: {{ter}}
+    </div>
+  </div>
+</div>
+<div class="card-columns">
+  <app-heroe-card [heroe]="heroe" [index]="heroe.index"  *ngFor="let heroe of heroes; let i = index"></app-heroe-card>
+</div>

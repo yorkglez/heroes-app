@@ -1,0 +1,7 @@
+{
+  "/api/*":{
+    "target": "http://api.malastareas.com.mx/api",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
