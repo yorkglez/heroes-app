@@ -5,6 +5,7 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { Observable, of, throwError} from "rxjs";
 import 'rxjs/add/operator/map';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html'

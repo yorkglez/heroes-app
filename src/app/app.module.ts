@@ -3,7 +3,7 @@ import { NgModule} from '@angular/core';
 
 //Routes
 import {APP_ROUTING} from './app.routes';
-
+import {RouterModule} from '@angular/router';
 //services
 import {HeroesService} from './services/heroes.service';
 //Components
@@ -15,13 +15,11 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { SearchComponent } from './components/search/search.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
-
-// import {HttpModule} from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AddheroeComponent } from './components/addheroe/addheroe.component';
-// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService }  from './in-memory-data.service';
-// import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,14 +30,25 @@ import { AddheroeComponent } from './components/addheroe/addheroe.component';
     HeroeComponent,
     SearchComponent,
     HeroeCardComponent,
-    AddheroeComponent
+    AddheroeComponent,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING,
     HttpClientModule,
-    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
-    // HttpClientInMemoryWebApiModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'admin',
+        component: AdminComponent
+      }
+    ])
   ],
   providers: [
     HeroesService

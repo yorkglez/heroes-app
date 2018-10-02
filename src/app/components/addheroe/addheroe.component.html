@@ -1,3 +1,24 @@
-<p>
-  addheroe works!
-</p>
+<form  (ngSubmit)="onSubmit()" #f="ngForm">
+  {{f.value | json}}
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="model.nombre" #nombre="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="casa">casa</label>
+    <input type="text" class="form-control" name="casa" id="casa" ngModel [(ngModel)]="model.casa" #casa="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="aparicion">aparicion</label>
+    <input type="text" class="form-control" name="aparicion" id="aparicion" ngModel [(ngModel)]="model.aparicion" #aparicion="ngModel">
+  </div>
+  <div class="form-group">
+      <label for="bio">bio</label>
+    <textarea class="form-control" name="bio" rows="4" cols="80" ngModel [(ngModel)]="model.bio" #bio="ngModel"></textarea>
+  </div>
+  <div class="form-">
+    <input type="file" name="img" class="form-control" ngModel [(ngModel)]="model.img" #img="ngModel">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
